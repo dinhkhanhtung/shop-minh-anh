@@ -6,3 +6,5 @@ out/
 docs/research/raw_assets/
 docs/research/source.html
 *.log
+
+.vercel

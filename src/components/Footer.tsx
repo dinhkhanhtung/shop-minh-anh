@@ -2,66 +2,55 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { ArrowUp } from "lucide-react";
 
 export default function Footer() {
   const [email, setEmail] = useState("");
-  const [subscribed, setSubscribed] = useState(false);
+  const [status, setStatus] = useState("");
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!email.trim()) return;
-    setSubscribed(true);
+    setStatus("Đã ghi nhận email nhận ưu đãi từ Shop Minh Ảnh.");
     setEmail("");
   };
 
   return (
-    <footer className="ma-footer">
-      <div className="ma-footer-top">
-        <div className="ma-footer-brand">
-          <h3>SHOP MINH ẢNH — THỜI TRANG QUẢNG CHÂU NAM NỮ</h3>
+    <footer className="md-footer">
+      <div className="md-footer-top">
+        <div className="md-footer-brand">
+          <div style={{ marginBottom: 16 }}>
+            <strong style={{ fontSize: 22, letterSpacing: "0.14em", color: "#fff" }}>
+              SHOP MINH ẢNH
+            </strong>
+          </div>
+          <h3>SHOP MINH ẢNH — QUẦN ÁO QUẢNG CHÂU NAM NỮ</h3>
           <p>
-            Chuyên tuyển chọn quần áo Quảng Châu loại 1 cho nam và nữ: áo thun, sơ mi,
-            blazer, sweater, quần tây, jogger và đồ bộ mặc nhà. Form dáng chuẩn đẹp,
-            chất liệu chọn lọc, giao hàng toàn quốc.
+            Chuyên sỉ &amp; lẻ thời trang Quảng Châu loại 1 cho nam và nữ: áo thun, blazer,
+            sweater, quần tây, jogger và đồ bộ mặc nhà.
           </p>
-          <p style={{ marginTop: 12 }}>
-            <Link
-              href="/pages/lien-he"
-              style={{ textDecoration: "underline", textUnderlineOffset: 4 }}
-            >
-              Liên hệ tư vấn sỉ &amp; lẻ ↗
-            </Link>
-          </p>
+          <Link href="/pages/lien-he">Liên hệ hỗ trợ ↗</Link>
         </div>
 
-        <div className="ma-newsletter">
-          <h3>ĐĂNG KÝ NHẬN ƯU ĐÃI MỚI NHẤT</h3>
-          <p>
-            Nhận thông báo sớm khi về lô hàng Quảng Châu mới và mã giảm giá dành riêng
-            cho khách hàng thân thiết.
-          </p>
-          <form onSubmit={handleSubscribe}>
+        <div className="md-newsletter">
+          <h3>ĐĂNG KÝ NHẬN TIN ƯU ĐÃI</h3>
+          <p>Cập nhật mẫu Quảng Châu mới về mỗi tuần và ưu đãi dành riêng cho khách hàng.</p>
+          <form onSubmit={handleSubmit}>
             <input
               type="email"
               required
-              placeholder="Nhập email hoặc số Zalo của bạn..."
+              placeholder="Nhập địa chỉ email của bạn"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
             <button type="submit">ĐĂNG KÝ</button>
           </form>
-          {subscribed && (
-            <p style={{ color: "#9ee0b8", marginTop: 10, fontSize: 12 }}>
-              Đã ghi nhận thông tin nhận ưu đãi từ Shop Minh Ảnh.
-            </p>
-          )}
+          {status && <div className="md-form-status">{status}</div>}
         </div>
       </div>
 
-      <div className="ma-footer-links">
-        <div className="ma-footer-col">
-          <h3>VỀ SHOP MINH ẢNH</h3>
+      <div className="md-footer-links">
+        <div className="md-footer-col">
+          <h3>Về chúng tôi</h3>
           <ul>
             <li>
               <Link href="/pages/gioi-thieu">Giới thiệu Shop Minh Ảnh</Link>
@@ -78,17 +67,17 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div className="ma-footer-col">
-          <h3>CHÍNH SÁCH &amp; ĐIỀU KHOẢN</h3>
+        <div className="md-footer-col">
+          <h3>Chính sách &amp; Điều khoản</h3>
           <ul>
             <li>
               <Link href="/pages/chinh-sach-giao-hang">Chính sách giao hàng</Link>
             </li>
             <li>
-              <Link href="/pages/chinh-sach-doi-hang">Chính sách đổi trả 7 ngày</Link>
+              <Link href="/pages/chinh-sach-doi-hang">Chính sách đổi hàng</Link>
             </li>
             <li>
-              <Link href="/pages/chinh-sach-bao-hanh">Cam kết chất lượng</Link>
+              <Link href="/pages/chinh-sach-bao-hanh">Chính sách bảo hành</Link>
             </li>
             <li>
               <Link href="/pages/chinh-sach-bao-mat">Chính sách bảo mật</Link>
@@ -96,17 +85,17 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div className="ma-footer-col">
-          <h3>DỊCH VỤ KHÁCH HÀNG</h3>
+        <div className="md-footer-col">
+          <h3>Dịch vụ khách hàng</h3>
           <ul>
             <li>
               <Link href="/collections/all">Tất cả sản phẩm</Link>
             </li>
             <li>
-              <Link href="/pages/yeu-thich">Sản phẩm yêu thích</Link>
+              <Link href="/pages/trang-thai-don-hang">Đơn hàng đã lưu</Link>
             </li>
             <li>
-              <Link href="/pages/trang-thai-don-hang">Đơn hàng đã đặt</Link>
+              <Link href="/pages/yeu-thich">Sản phẩm yêu thích</Link>
             </li>
             <li>
               <Link href="/pages/lien-he">Liên hệ hỗ trợ</Link>
@@ -114,28 +103,27 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div className="ma-footer-col">
-          <h3>PHƯƠNG THỨC THANH TOÁN</h3>
-          <div className="ma-payments">
-            <span>COD</span>
+        <div className="md-footer-col">
+          <h3>Thanh toán</h3>
+          <div className="md-payments">
+            <span>VISA</span>
+            <span>MASTERCARD</span>
             <span>VIETQR</span>
-            <span>MOMO</span>
-            <span>VNPAY</span>
+            <span>COD</span>
           </div>
-          <p className="ma-muted" style={{ color: "#999", fontSize: 12 }}>
-            Kiểm tra hàng thoải mái trước khi thanh toán. Hỗ trợ đổi size nhanh chóng.
+          <p className="md-muted">
+            Kiểm tra hàng thoải mái trước khi thanh toán. Hỗ trợ đổi size trong 7 ngày.
           </p>
         </div>
       </div>
 
-      <div className="ma-copyright">
-        <span>© {new Date().getFullYear()} SHOP MINH ẢNH — QUẦN ÁO QUẢNG CHÂU NAM NỮ</span>
+      <div className="md-copyright">
+        <span>© {new Date().getFullYear()} SHOP MINH ẢNH — THỜI TRANG QUẢNG CHÂU NAM NỮ</span>
         <button
           type="button"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          style={{ display: "inline-flex", alignItems: "center", gap: 6 }}
         >
-          LÊN ĐẦU TRANG <ArrowUp size={13} />
+          BACK TO TOP ↑
         </button>
       </div>
     </footer>
