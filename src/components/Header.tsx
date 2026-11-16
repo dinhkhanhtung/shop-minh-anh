@@ -94,6 +94,11 @@ export default function Header() {
             <Menu size={22} strokeWidth={1.6} />
           </button>
 
+          <Link href="/" className="ma-logo-wrap" aria-label="Shop Minh Anh - Trang chủ">
+            <span className="ma-logo-title">MINH ANH</span>
+            <span className="ma-logo-sub">Quảng Châu Nam Nữ</span>
+          </Link>
+
           <nav className="ma-nav-desktop" aria-label="Menu chính">
             {NAV_MENU.map((item) => (
               <div key={item.label} className="ma-nav-item">
@@ -119,11 +124,6 @@ export default function Header() {
               </div>
             ))}
           </nav>
-
-          <Link href="/" className="ma-logo-wrap" aria-label="Shop Minh Anh - Trang chủ">
-            <span className="ma-logo-title">MINH ANH</span>
-            <span className="ma-logo-sub">Quảng Châu Nam Nữ</span>
-          </Link>
 
           <div className="ma-header-actions">
             <button
