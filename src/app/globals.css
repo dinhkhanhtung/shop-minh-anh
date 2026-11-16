@@ -24,6 +24,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -33,6 +34,7 @@ body {
   font-family: var(--font-sans);
   font-size: 14px;
   line-height: 1.6;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -1231,6 +1233,21 @@ img {
   font-weight: 700;
 }
 
+/* Cart & Checkout Responsive Layouts */
+.ma-cart-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(280px, 1fr);
+  gap: 48px;
+  align-items: start;
+}
+
+.ma-checkout-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+  gap: 48px;
+  align-items: start;
+}
+
 /* Responsive */
 @media (min-width: 1280px) {
   .ma-listing-grid {
@@ -1243,11 +1260,13 @@ img {
   .ma-announcement,
   .ma-header-inner,
   .ma-category-bar-inner {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
   .ma-header-inner {
     grid-template-columns: auto 1fr auto;
+    height: 66px;
+    gap: 12px;
   }
   .ma-nav-desktop {
     display: none;
@@ -1260,7 +1279,8 @@ img {
     min-height: auto;
   }
   .ma-hero-media {
-    min-height: 360px;
+    min-height: 0;
+    aspect-ratio: 4 / 3;
   }
   .ma-grid-4,
   .ma-cat-grid {
@@ -1270,7 +1290,7 @@ img {
     grid-template-columns: 1fr;
   }
   .ma-lookbook-copy {
-    padding: 40px 28px;
+    padding: 40px 24px;
   }
   .ma-policy-grid {
     grid-template-columns: 1fr;
@@ -1278,6 +1298,7 @@ img {
   .ma-policy-item {
     border-right: 0;
     border-bottom: 1px solid var(--line);
+    padding: 28px 16px;
   }
   .ma-policy-item:last-child {
     border-bottom: 0;
@@ -1288,9 +1309,13 @@ img {
   }
   .ma-footer-links {
     grid-template-columns: repeat(2, 1fr);
+    gap: 28px 20px;
   }
-  .ma-list-layout {
+  .ma-list-layout,
+  .ma-cart-layout,
+  .ma-checkout-layout {
     grid-template-columns: 1fr;
+    gap: 28px;
   }
   .ma-filter-toggle {
     display: inline-block;
@@ -1321,26 +1346,107 @@ img {
 }
 
 @media (max-width: 640px) {
+  .ma-container,
+  .ma-header-inner,
+  .ma-category-bar-inner {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
   .ma-announcement-links,
   .ma-announcement-right {
     display: none;
   }
   .ma-announcement {
     justify-content: center;
-    font-size: 10px;
+    text-align: center;
+    padding: 8px 14px;
+    font-size: 9.5px;
+    letter-spacing: 0.08em;
+  }
+  .ma-logo-title {
+    font-size: 21px;
+    letter-spacing: 0.12em;
+  }
+  .ma-logo-sub {
+    font-size: 8px;
+    letter-spacing: 0.2em;
+  }
+  .ma-header-actions {
+    gap: 8px;
+  }
+  .ma-header-actions a[aria-label="Đơn hàng của bạn"] {
+    display: none;
   }
   .ma-hero-copy {
-    padding: 40px 20px;
+    padding: 36px 16px;
+  }
+  .ma-hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .ma-hero-actions .ma-button {
+    width: 100%;
   }
   .ma-section {
-    padding: 48px 0;
+    padding: 44px 0;
+  }
+  .ma-section-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 24px;
   }
   .ma-grid-4,
   .ma-cat-grid,
   .ma-listing-grid {
-    gap: 24px 12px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 12px;
+  }
+  .ma-cat-label {
+    padding: 10px 0;
+  }
+  .ma-cat-label h3 {
+    font-size: 12px;
+    letter-spacing: 0.03em;
   }
   .ma-card-quickbar {
     display: none;
+  }
+  .ma-list-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .ma-list-controls {
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .ma-product-actions {
+    grid-template-columns: 1fr 48px;
+  }
+  .ma-product-actions > button:nth-child(2) {
+    grid-column: 1 / -1;
+    order: 3;
+  }
+  .ma-footer {
+    padding: 48px 0 0;
+  }
+  .ma-footer-links {
+    gap: 24px 14px;
+    padding: 32px 0;
+  }
+  .ma-copyright {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+  .ma-modal {
+    padding: 24px 16px;
+  }
+  .ma-contact-float {
+    bottom: 16px;
+    right: 16px;
+    padding: 10px 14px;
   }
 }

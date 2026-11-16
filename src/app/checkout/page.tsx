@@ -104,14 +104,7 @@ export default function CheckoutPage() {
         THÔNG TIN GIAO HÀNG
       </h1>
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "minmax(0, 1.1fr) minmax(280px, 0.9fr)",
-          gap: 48,
-          alignItems: "start",
-        }}
-      >
+      <div className="ma-checkout-layout">
         <form
           onSubmit={handleSubmit}
           style={{ display: "flex", flexDirection: "column", gap: 18 }}

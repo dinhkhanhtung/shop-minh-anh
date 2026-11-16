@@ -43,10 +43,13 @@ export default function HomePage() {
           </div>
 
           <div className="ma-hero-media">
-            <img
-              src="/assets/banners/hero-desktop-v1.webp"
-              alt="Shop Minh Anh - Thời trang Quảng Châu Nam Nữ"
-            />
+            <picture style={{ display: "block", width: "100%", height: "100%" }}>
+              <source media="(max-width:767px)" srcSet="/assets/banners/hero-mobile-v1.webp" />
+              <img
+                src="/assets/banners/hero-desktop-v1.webp"
+                alt="Shop Minh Anh - Thời trang Quảng Châu Nam Nữ"
+              />
+            </picture>
           </div>
         </div>
       </section>

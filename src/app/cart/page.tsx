@@ -34,14 +34,7 @@ export default function CartPage() {
           </Link>
         </div>
       ) : (
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "minmax(0, 1.6fr) minmax(280px, 1fr)",
-            gap: 48,
-            alignItems: "start",
-          }}
-        >
+        <div className="ma-cart-layout">
           <div>
             {cart.map((item, idx) => {
               const p = getProduct(item.handle);
