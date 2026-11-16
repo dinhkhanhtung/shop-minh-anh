@@ -149,7 +149,7 @@ export default function CollectionPage() {
     sortBy,
   ]);
 
-  const title = COLLECTION_TITLES[slug] || "Bộ sưu tập Shop Minh Ảnh";
+  const title = COLLECTION_TITLES[slug] || "Bộ sưu tập Shop Minh Anh";
 
   const resetFilters = () => {
     setSelectedGenders([]);

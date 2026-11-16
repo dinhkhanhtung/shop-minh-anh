@@ -43,7 +43,7 @@ export default function CheckoutPage() {
         };
       }),
       subtotal: cartSubtotal,
-      status: "Đã ghi nhận đơn hàng — Shop Minh Ảnh sẽ liên hệ xác nhận",
+      status: "Đã ghi nhận đơn hàng — Shop Minh Anh sẽ liên hệ xác nhận",
     };
 
     saveOrder(order);
@@ -66,11 +66,11 @@ export default function CheckoutPage() {
             ĐẶT HÀNG THÀNH CÔNG
           </p>
           <h1 style={{ fontSize: 26, margin: "0 0 12px" }}>
-            Cảm ơn bạn đã đặt hàng tại Shop Minh Ảnh!
+            Cảm ơn bạn đã đặt hàng tại Shop Minh Anh!
           </h1>
           <p style={{ fontSize: 14, color: "#444", lineHeight: 1.7 }}>
             Mã đơn hàng của bạn là <strong>{completedOrder.id}</strong>. Nhân viên
-            Shop Minh Ảnh sẽ gọi/nhắn Zalo xác nhận đơn trong thời gian sớm nhất.
+            Shop Minh Anh sẽ gọi/nhắn Zalo xác nhận đơn trong thời gian sớm nhất.
           </p>
           <div style={{ margin: "20px 0", fontSize: 14 }}>
             <div>Người nhận: <strong>{completedOrder.customer.name}</strong> — {completedOrder.customer.phone}</div>
@@ -121,7 +121,7 @@ export default function CheckoutPage() {
             <input
               type="text"
               required
-              placeholder="Ví dụ: Nguyễn Minh Ảnh"
+              placeholder="Ví dụ: Nguyễn Minh Anh"
               value={name}
               onChange={(e) => setName(e.target.value)}
               style={{ padding: 13, border: "1px solid #d5d2cd", fontWeight: 400 }}

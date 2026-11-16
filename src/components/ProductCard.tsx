@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import { Heart } from "lucide-react";
 import { useStore } from "@/context/StoreContext";
 import { formatMoney, getDiscountPercent } from "@/lib/format";
 import type { Product } from "@/types/catalog";
@@ -14,75 +15,65 @@ export default function ProductCard({ product }: { product: Product }) {
   const secondImg = product.images[1]?.src || firstImg;
 
   return (
-    <article className="pro-loop" data-product={product.handle}>
-      <div className="pro-loop--wrap">
-        <div className="pro-loop--head">
-          <div className="pro-loop--img">
-            <Link href={`/products/${product.handle}`} className="md-card-photo">
-              <img
-                src={firstImg}
-                alt={product.title}
-                loading="lazy"
-                width={600}
-                height={800}
-              />
-              <img
-                className="md-hover-photo"
-                src={secondImg}
-                alt=""
-                loading="lazy"
-                width={600}
-                height={800}
-              />
-            </Link>
-          </div>
-          <div className="pro-loop--wishlist">
-            <button
-              type="button"
-              className={`btn-wishlist md-wish ${isLiked ? "md-liked" : ""}`}
-              aria-label={`Yêu thích ${product.title}`}
-              aria-pressed={isLiked}
-              onClick={() => toggleFavorite(product.handle)}
-            >
-              {isLiked ? "♥" : "♡"}
-            </button>
-          </div>
-          <div className="pro-loop--buttons">
-            <button
-              type="button"
-              className="pro-action md-quick"
-              aria-label={`Xem nhanh ${product.title}`}
-              onClick={() => openQuickView(product.handle)}
-            >
-              ＋
-            </button>
-          </div>
+    <article className="ma-product-card">
+      <div className="ma-card-media">
+        <Link href={`/products/${product.handle}`} style={{ display: "block", width: "100%", height: "100%" }}>
+          <img
+            src={firstImg}
+            alt={product.title}
+            className="ma-card-img-main"
+            loading="lazy"
+          />
+          {secondImg !== firstImg && (
+            <img
+              src={secondImg}
+              alt=""
+              className="ma-card-img-hover"
+              loading="lazy"
+            />
+          )}
+        </Link>
+
+        {discount > 0 && <span className="ma-card-sale-tag">-{discount}%</span>}
+
+        <div className="ma-card-actions">
+          <button
+            type="button"
+            className={`ma-card-circle-btn ${isLiked ? "liked" : ""}`}
+            aria-label={`Yêu thích ${product.title}`}
+            onClick={() => toggleFavorite(product.handle)}
+          >
+            <Heart size={15} strokeWidth={1.6} fill={isLiked ? "#9e3636" : "none"} />
+          </button>
         </div>
 
-        <div className="pro-loop--body">
-          <div className="pro-loop--vendor">
-            {product.gender === "nu"
-              ? "SHOP MINH ẢNH • NỮ"
-              : product.gender === "unisex"
-              ? "SHOP MINH ẢNH • NAM NỮ"
-              : "SHOP MINH ẢNH"}
-          </div>
-          <h3 className="pro-loop--title">
-            <Link href={`/products/${product.handle}`}>{product.title}</Link>
-          </h3>
-          <div className="pro-loop--prices">
-            <div className="price">
-              <span className={discount > 0 ? "hightlight" : ""}>
-                {formatMoney(product.price)}
-              </span>
-              {discount > 0 && <del>{formatMoney(product.compare)}</del>}
-            </div>
-            {discount > 0 && (
-              <div className="percent">
-                <span>{discount}% off</span>
-              </div>
-            )}
-          </div>
+        <button
+          type="button"
+          className="ma-card-quickbar"
+          onClick={() => openQuickView(product.handle)}
+        >
+          Xem nhanh
+        </button>
+      </div>
+
+      <div className="ma-card-body">
+        <div className="ma-card-meta">
+          {product.gender === "nu"
+            ? "Minh Anh Nữ"
+            : product.gender === "unisex"
+            ? "Minh Anh Unisex"
+            : "Minh Anh Nam"}
+        </div>
+        <h3 className="ma-card-title">
+          <Link href={`/products/${product.handle}`}>{product.title}</Link>
+        </h3>
+        <div className="ma-card-prices">
+          <span className={`ma-price-now ${discount > 0 ? "sale" : ""}`}>
+            {formatMoney(product.price)}
+          </span>
+          {discount > 0 && (
+            <del className="ma-price-old">{formatMoney(product.compare)}</del>
+          )}
         </div>
       </div>
     </article>

@@ -112,13 +112,13 @@ export default function InfoPage() {
         <div className="ma-crumbs">
           <Link href="/">Trang chủ</Link>
           <span>/</span>
-          <span>Liên hệ Shop Minh Ảnh</span>
+          <span>Liên hệ Shop Minh Anh</span>
         </div>
         <h1 style={{ fontSize: 28, fontWeight: 600, marginBottom: 14 }}>
           LIÊN HỆ SHOP MINH ẢNH
         </h1>
         <p style={{ fontSize: 14, color: "#555", lineHeight: 1.8, marginBottom: 28 }}>
-          Shop Minh Ảnh chuyên quần áo Quảng Châu Nam &amp; Nữ loại 1 (bán lẻ &amp; nhận
+          Shop Minh Anh chuyên quần áo Quảng Châu Nam &amp; Nữ loại 1 (bán lẻ &amp; nhận
           đổ sỉ, CTV toàn quốc). Để lại thông tin dưới đây để được tư vấn chọn size, báo
           giá sỉ hoặc kiểm tra đơn hàng nhanh nhất.
         </p>
@@ -127,7 +127,7 @@ export default function InfoPage() {
           onSubmit={(e) => {
             e.preventDefault();
             setContactSent(true);
-            showToast("Đã gửi yêu cầu liên hệ tới Shop Minh Ảnh.");
+            showToast("Đã gửi yêu cầu liên hệ tới Shop Minh Anh.");
           }}
           style={{ display: "flex", flexDirection: "column", gap: 18 }}
         >
@@ -165,7 +165,7 @@ export default function InfoPage() {
           </button>
           {contactSent && (
             <p style={{ fontSize: 13, color: "#283e32", background: "#f1f6f2", padding: 14 }}>
-              Cảm ơn bạn! Shop Minh Ảnh đã tiếp nhận thông tin và sẽ phản hồi sớm nhất.
+              Cảm ơn bạn! Shop Minh Anh đã tiếp nhận thông tin và sẽ phản hồi sớm nhất.
             </p>
           )}
         </form>
@@ -178,14 +178,14 @@ export default function InfoPage() {
       <div className="ma-crumbs">
         <Link href="/">Trang chủ</Link>
         <span>/</span>
-        <span>Thông tin Shop Minh Ảnh</span>
+        <span>Thông tin Shop Minh Anh</span>
       </div>
       <h1 style={{ fontSize: 28, fontWeight: 600, marginBottom: 20 }}>
         SHOP MINH ẢNH — THỜI TRANG QUẢNG CHÂU NAM NỮ
       </h1>
       <div style={{ fontSize: 15, lineHeight: 1.9, color: "#333" }}>
         <p>
-          <strong>Shop Minh Ảnh</strong> chuyên cung cấp các dòng sản phẩm quần áo
+          <strong>Shop Minh Anh</strong> chuyên cung cấp các dòng sản phẩm quần áo
           Quảng Châu tuyển chọn cho cả Nam và Nữ: áo blazer, áo kiểu, set bộ thu đông,
           áo thun, sweater, quần tây, quần jogger và đồ mặc nhà cao cấp.
         </p>

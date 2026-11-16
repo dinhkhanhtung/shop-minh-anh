@@ -430,7 +430,7 @@ export default function Overlays() {
                     Giỏ hàng của bạn đang trống
                   </p>
                   <p style={{ fontSize: 13, color: "#777", marginBottom: 22 }}>
-                    Khám phá ngay các mẫu quần áo Quảng Châu nam nữ mới về tại Shop Minh Ảnh.
+                    Khám phá ngay các mẫu quần áo Quảng Châu nam nữ mới về tại Shop Minh Anh.
                   </p>
                   <Link
                     href="/collections/hang-moi"
@@ -647,7 +647,7 @@ export default function Overlays() {
       )}
 
       {/* Floating Contact Button */}
-      <Link href="/pages/lien-he" className="ma-contact-float" aria-label="Liên hệ Shop Minh Ảnh">
+      <Link href="/pages/lien-he" className="ma-contact-float" aria-label="Liên hệ Shop Minh Anh">
         <MessageCircle size={18} />
         <span>LIÊN HỆ</span>
       </Link>

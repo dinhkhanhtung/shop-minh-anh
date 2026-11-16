@@ -6,9 +6,9 @@ import Footer from "@/components/Footer";
 import Overlays from "@/components/Overlays";
 
 export const metadata: Metadata = {
-  title: "Shop Minh Ảnh | Thời Trang Quảng Châu Nam Nữ",
+  title: "Shop Minh Anh | Thời Trang Quảng Châu Nam Nữ",
   description:
-    "Shop Minh Ảnh chuyên quần áo Quảng Châu nam nữ loại 1: áo thun, blazer, sweater, quần tây, jogger, kaki, đồ bộ. Form chuẩn dáng Việt, kiểm tra hàng trước khi thanh toán.",
+    "Shop Minh Anh — Chuyên quần áo Quảng Châu nam nữ tuyển chọn loại 1: blazer, áo kiểu, áo thun, sweater, quần tây, jogger và đồ bộ mặc nhà. Form chuẩn dáng Việt.",
 };
 
 export default function RootLayout({
@@ -20,17 +20,15 @@ export default function RootLayout({
     <html lang="vi">
       <head>
         <link rel="stylesheet" href="/styles/fonts.css" />
-        <link rel="stylesheet" href="/styles/libs.css" />
-        <link rel="stylesheet" href="/styles/general.css" />
-        <link rel="stylesheet" href="/styles/app.css" />
-        <link rel="stylesheet" href="/styles/banners.css" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&display=swap"
+        />
       </head>
-      <body className="md-site">
+      <body>
         <StoreProvider>
           <Header />
-          <main id="md-main" className="body-main body-main-2">
-            {children}
-          </main>
+          <main>{children}</main>
           <Footer />
           <Overlays />
         </StoreProvider>
